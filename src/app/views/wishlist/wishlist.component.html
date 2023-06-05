@@ -1,0 +1,25 @@
+<section id="wishlistContent" *ngIf="wishedItems">
+    <h1><strong>Wishlist</strong></h1>
+    <ng-container *ngIf="!hasSomethingThere">
+        <p>Não tem produtos na sua wishlist!</p>
+        <p><button routerLink="/men/all" class="btn btn-primary">Voltar para a página de produtos</button></p>
+        <p><button routerLink="" id="btnGoHome" class="btn btn-primary">Voltar para a página principal</button></p>
+    </ng-container>
+    <table>
+        <tbody>
+            <tr *ngFor="let item of wishedItems">
+                <td>
+                    <img [src]="item.main_photo" [alt]="item.name">
+                </td>
+                <td>
+                        <h3><strong>{{ item.brand }}</strong></h3>
+                        <h6>{{ item.name }}</h6>
+                        <h4>{{ item.price }}€</h4>
+                </td>
+                <td>
+                    <button type="button" id="btnRemove" class="btn btn-danger" (click)="onDeleteFromWishlist(item)">Remover</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>

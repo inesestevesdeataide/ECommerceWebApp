@@ -1,0 +1,92 @@
+#signUpContent {
+    padding: 50px;
+}
+
+#signUpContent h1 {
+    margin-bottom: 30px;
+}
+
+#signUpContent p {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    vertical-align: middle;
+}
+
+#signUpContent ng-container small {
+    margin-bottom: 15px;
+}
+
+#signUpContent small, label {
+    vertical-align: middle;
+}
+
+#signUpContent input {
+    float: right;
+    width: 85%;
+}
+
+#signUpContent input:focus::placeholder {
+    color: transparent;
+}
+
+#btnSignUp {
+    cursor: pointer;
+    padding: 10px 15px;
+    margin-bottom: 0;
+    font-family: inherit;
+    margin-top: 30px;
+}
+
+.ng-touched.ng-invalid:not(form) {
+    border: 2px solid red;
+}
+
+.ng-touched.ng-invalid:not(form)~small {
+    margin-bottom: 10px;
+    display: inline;
+}
+
+
+@media only screen and (max-width: 1150px) {
+    #signUpContent input {
+        width: 75%;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    #signUpContent p {
+        margin-top: 13px;
+        margin-bottom: 13px;
+    }
+    
+    #signUpContent label, input, button {
+        font-size: 14px;
+    }
+
+    #signUpContent small {
+        font-size: 12px;
+    }
+
+    #signUpContent input {
+        width: 65%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    #signUpContent p {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    #signUpContent label,input, button {
+        font-size: 12px;
+    }
+
+    #signUpContent small {
+        font-size: 10px;
+    }
+
+    #signUpContent input {
+        width: 55%;
+    }
+}

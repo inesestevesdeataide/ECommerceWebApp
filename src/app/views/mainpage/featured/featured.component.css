@@ -1,0 +1,55 @@
+#featuredProductsContent {
+    padding-top: 20px;
+    text-align: center;
+}
+
+#manProductsContent img {
+    max-width: 100%;
+}
+
+.card {
+    border: 2px solid transparent;
+}
+
+.card:hover {
+    border: 2px solid red;
+    border-radius: 0;
+}
+
+tr {
+    display: grid;
+    grid-template-rows: repeat(4, auto);
+    grid-template-columns: repeat(4, 1fr);
+}
+
+td {
+    padding: 25px;
+}
+
+@media only screen and (max-width: 800px) {
+    tr {
+        grid-template-rows: repeat(3, auto);
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    td {
+        padding: 15px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    tr {
+        grid-template-rows: repeat(4, auto);
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    td {
+        padding: 10px;
+    }
+
+    img {
+        width: 150px;
+        height: 200px;
+        padding-bottom: 15px;
+    }
+}

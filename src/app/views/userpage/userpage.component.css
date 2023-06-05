@@ -1,0 +1,95 @@
+#userContent {
+    padding: 50px;
+}
+
+#userContent h1 {
+    margin-bottom: 30px;
+}
+
+#userContent p {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    vertical-align: middle;
+}
+
+#userContent ng-container small {
+    margin-bottom: 15px;
+}
+
+#userContent small, label {
+    vertical-align: middle;
+}
+
+#userContent input {
+    float: right;
+    width: 85%;
+}
+
+#userContent input:focus::placeholder {
+    color: transparent;
+}
+
+#btnChange {
+    margin-top: 15px;
+}
+#btnSaveChanges {
+    cursor: pointer;
+    padding: 10px 15px;
+    margin-bottom: 30px;
+    font-family: inherit;
+    margin-top: 30px;
+}
+
+.ng-touched.ng-invalid:not(form) {
+    border: 2px solid red;
+}
+
+.ng-touched.ng-invalid:not(form)~small {
+    margin-bottom: 10px;
+    display: inline;
+}
+
+
+@media only screen and (max-width: 1150px) {
+    #userContent input {
+        width: 75%;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    #userContent p {
+        margin-top: 13px;
+        margin-bottom: 13px;
+    }
+    
+    #userContent label, input, span, p, button {
+        font-size: 14px;
+    }
+
+    #userContent small {
+        font-size: 12px;
+    }
+
+    #userContent input {
+        width: 65%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    #userContent p {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    #userContent label,input, span, p, button {
+        font-size: 12px;
+    }
+
+    #userContent small {
+        font-size: 10px;
+    }
+
+    #userContent input {
+        width: 55%;
+    }
+}

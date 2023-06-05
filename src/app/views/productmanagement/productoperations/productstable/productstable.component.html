@@ -1,0 +1,50 @@
+<section id="tableContent" *ngIf="productList">
+    <br>
+    <p *ngIf="productList.length===0" class="text-danger">Não existem produtos que obedeçam ao critério de pesquisa!</p>
+    <h3><strong>Lista de produtos</strong></h3>
+    <p id="total">Total de produtos: {{ productList.length }}</p>
+    <table id="productTable" class="text-center" *ngIf="productList.length>0">
+        <thead>
+            <tr>
+                <th>Foto</th>
+                <th>Marca</th>
+                <th>Produto</th>
+                <th>Tipo produto</th>
+                <th>Cor</th>
+                <th>Preço</th>
+                <th>Descrição</th>
+                <th>Destaque</th>
+                <th>Operações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of productList | slice: (page - 1) * pageSize : page * pageSize">
+                <td>
+                    <img src="{{ product.main_photo }}" alt="{{ product.name }}">
+                    <img src="{{ product.sec_photo }}" alt="{{ product.name }}">
+                </td>
+                <td>{{ product.brand }}</td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.product_type }}</td>
+                <td>{{ product.color }}</td>
+                <td>{{ product.price }}€</td>
+                <td>{{ product.description }}</td>
+                <td>
+                    <button (click)="toggleFeatured(product)" type="button" class="btn">
+                        <span [ngStyle]="product.featured ? {'color': 'green'} : {'color': 'black'}">{{ product.featured
+                            ? '&#10004;' : '&#10006;' }}</span>
+                    </button>
+                </td>
+                <td>
+                    <button routerLink="/productupdate/{{ product.id }}" type="button" class="btn btn-primary" title="Editar produto"><i class="fa-solid fa-pencil"></i></button>
+                    <!-- TODO: deleteproductdialog created. Replace -->
+                    <button routerLink="/productdelete/{{ product.id }}" type="button" class="btn btn-danger" title="Eliminar produto"><i class="fa-sharp fa-solid fa-xmark"></i></button>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot></tfoot>
+    </table>
+    <br>
+    <ngb-pagination [(page)]="page" [pageSize]="pageSize" [collectionSize]="productList.length" [boundaryLinks]="true" size="sm">
+    </ngb-pagination>
+</section>

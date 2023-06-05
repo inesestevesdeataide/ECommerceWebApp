@@ -1,0 +1,109 @@
+#wishlistContent {
+  padding: 50px;
+  text-align: center;
+  color: inherit;
+}
+
+/* Nothing listed */
+#btnGoHome {
+  margin-top: 14px;
+}
+
+p:first-of-type {
+  margin-top: 46px;
+  margin-bottom: 46px;
+}
+
+#btnGoHome {
+  background-color: cornflowerblue;
+}
+
+/* Something listed */
+table {
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+td {
+  width: 33.33%;
+  padding: 20px;
+  vertical-align: middle;
+}
+
+h3, h4, h6 {
+  margin: 15px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+#btnRemove {
+  border-radius: 0;
+  margin: 0 auto;
+  width: 200px;
+  height: auto;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 800px) {
+  #btnRemove {
+    width: 160px;
+  }
+
+  h3, h4, h6 {
+    margin: 12px;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  td {
+    padding: 15px;
+  }
+
+  img {
+    max-width: 90%;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  h4 {
+    font-size: 22px;
+  }
+
+  h3, h4, h6 {
+    margin: 10px;
+  }
+
+  h6, #btnRemove {
+    font-size: 14px;
+  }
+
+  #btnRemove {
+    width: 100px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  #wishlistContent {
+    padding: 30px 30px 5px 30px; 
+  }
+  td {
+    display: block;
+    width: 100%;
+    padding: 5px;
+  }
+
+  img {
+    max-width: 80%;
+  }
+
+  #btnRemove { 
+    width: 220px;
+    margin-bottom: 25px;
+  }
+}

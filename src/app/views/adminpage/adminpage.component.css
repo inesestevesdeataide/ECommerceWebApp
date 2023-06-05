@@ -1,0 +1,19 @@
+#adminAreaContainer {
+    padding: 50px;
+}
+
+#adminAreaContent {
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    border: 1px solid black;
+    border-radius: 1%;
+    margin-top: 50px;
+}
+
+a i {
+    margin: 8px;
+}
+

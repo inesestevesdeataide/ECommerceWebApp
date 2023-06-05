@@ -1,0 +1,62 @@
+#userManagementContent {
+    padding: 50px;
+}
+
+h1 {
+    margin-bottom: 30px;
+}
+
+p {
+   margin-bottom: 0;
+}
+
+button {
+    padding: 10px 15px;
+    margin-top: 30px;
+}
+
+#btnGoBackHome {
+    background-color: cornflowerblue;
+}
+
+#userTable {
+    border-collapse: collapse;
+    max-width: 100%;
+}
+
+th, td {
+    border: 1px solid rgba(237, 233, 233, 0.565);
+    padding: 10px 20px;
+}
+
+th {
+    background-color: black;
+    color: white;
+}
+
+tr:nth-of-type(odd) {
+    background-color: rgb(222, 221, 221);
+}
+
+tr:hover {
+    cursor: pointer;
+    background-color: rgb(129, 124, 124);
+    color: white;
+}
+
+@media only screen and (max-width: 800px) {
+    #userManagementContent:not(h1), button {
+        font-size: 12px;
+    }
+
+    th, td {
+        border: 1px solid rgba(237, 233, 233, 0.565);
+        padding: 8px 15px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    #userManagementContent:not(h1), button {
+        font-size: 10px;
+    }
+}

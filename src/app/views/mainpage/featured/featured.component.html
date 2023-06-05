@@ -1,0 +1,17 @@
+<section id="featuredProductsContent">
+    <h1><strong>DESTAQUES</strong></h1>
+    <table>
+        <tbody>
+            <tr>
+                <!-- <app-productcard></app-productcard> -->
+                <td *ngFor="let product of featuredProductsList; let i = index">
+                    <section class="card">
+                        <a routerLink="/product/{{ product.id }}" class="images">
+                            <img [src]="product.main_photo" [alt]="product.name">
+                        </a>
+                    </section>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>

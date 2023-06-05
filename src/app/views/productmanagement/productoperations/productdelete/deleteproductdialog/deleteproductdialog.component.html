@@ -1,0 +1,10 @@
+<app-confirmdialog>
+    <h4><strong>ELIMINAR!</strong></h4>
+    <br>
+    <p>Confirma que pretende eliminar o produto <span>"{{ product.name }}"</span>?</p>    
+    <br>
+    <section>
+        <button type="button" class="btn btn-primary" (click)="confirmDelete(product.id!) ">Sim</button>
+        <button type="button" class="btn btn-danger" (click)="closeDialogBox()">Não</button>
+    </section>
+</app-confirmdialog>

@@ -1,0 +1,22 @@
+<section id="loginDialog" [ngStyle]="{ 'display' : displayDialog }">
+    <section id="loginDialogContent">
+        <h4><strong>Controlo de acessos</strong></h4>
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <small *ngIf="!isActive">O seu registo aguarda validação.</small>
+            <small *ngIf="!allFieldsFilled">Os dois campos são de preenchimento obrigatório!</small>
+            <small *ngIf="!isValidEmail">O e-mail tem um formato incorrecto!</small>
+            <small *ngIf="!userExists">Utilizador inexistente!</small>
+            <br>
+            <p>
+                <label for="email">Email: </label>
+                <input type="email" formControlName="email" placeholder="mariacastro@mail.com"/>
+            </p>
+            <p>
+                <label for="password">Senha: </label>
+                <input formControlName="password" type="password">
+            </p>
+            <button id="btnValidate" class="btn btn-primary">Validar</button>
+            <span id="btnClose" (click)="closeDialogBox()">X</span>
+        </form>
+    </section>
+</section>

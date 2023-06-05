@@ -1,0 +1,158 @@
+nav {
+  width: auto;
+  height: 100px;
+  display: flex;
+  color: inherit;
+  position: relative;
+}
+
+nav img { 
+  max-width: 100%;
+  max-height: 55px;
+  margin-top: -15px;
+  padding: 0 10px;
+}
+
+.navbar-center {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  margin-top: 35px;
+  margin-right: auto;
+  margin-bottom: 0;
+  margin-left: auto;
+}
+
+.dropdown button {
+  display: flex;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  background-color: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+}
+
+.dropdown-content {
+  position: absolute;
+  white-space: nowrap;
+  display: none;
+  z-index: 1;
+  background-color: white;
+}
+
+.dropdown-content a {
+  color: inherit;
+  padding: 10px 20px;
+  font-size: small;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #e4e4e4;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.navbar-right {
+  position: absolute;
+  top: 36px;
+  right: 0;
+  display: flex;
+}
+
+.navbar-right i {
+  color: black;
+  margin-right: 15px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.navbar-right small {
+  color: black;
+  margin-right: 15px;
+  font-size: smaller;
+}
+
+@media only screen and (max-width: 1150px) {
+  #welcomeMessage {
+    width: 500%;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  nav {
+    font-size: 95%;
+  }
+
+  nav img { 
+    max-height: 50px;
+    margin-top: -12px;
+    padding: 0 10px;
+  }
+
+  .navbar-center {
+    margin-top: 38px;
+  }
+
+  .dropdown button {
+    font-size: 95%;
+  }
+
+  .navbar-right {
+    top: 40px;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  nav img { 
+    max-height: 45px;
+  }
+
+  .navbar-right {
+    top: 12px;
+  }
+  .navbar-right i {
+    color: black;
+    margin-right: 15px;
+    cursor: pointer;
+    font-size: 0.8rem;
+  }
+
+  #welcomeMessage {
+    top: 55px;
+    font-size: x-small;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  nav {
+    font-size: 90%;
+  }
+
+  .dropdown button {
+    font-size: 90%;
+  }
+
+  .navbar-right i {
+    color: black;
+    margin-right: 15px;
+    cursor: pointer;
+    font-size: 0.8rem;
+  }
+
+  #welcomeMessage {
+    top: 53px;
+    font-size: x-small;
+  }
+}

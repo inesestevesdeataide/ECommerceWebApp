@@ -1,0 +1,106 @@
+<section id="userContent" *ngIf="user" (ngSubmit)="saveChanges()" class="container-fluid">
+    <h1 class="col text-center"><strong>Perfil</strong></h1>
+    <ng-container *ngIf="!isOnEditMode">
+        <p><span>Nome: </span>{{ user.name }}</p>
+        <p><span>E-mail: </span>{{ user.email }}</p>
+        <p><span>Senha: </span>{{ hidePassword(user.password) }}</p>
+        <p><span>Morada: </span>{{ user.address }}</p>
+        <p><span>Código Postal: </span>{{ user.zip }}</p>
+        <p><span>País: </span>{{ user.country }}</p>
+        <div class="col text-center">
+            <button id="btnChange" class="btn btn-primary" (click)="editModeOn()">Alterar informação</button>
+        </div>
+    </ng-container>
+
+    <ng-container *ngIf="isOnEditMode">
+        <form [formGroup]="form" (ngSubmit)="saveChanges()">
+            <p>
+                <label for="name">Nome: </label>
+                <input formControlName="name" type="text" name="name">
+            </p>
+            <ng-container *ngIf="name?.touched && name?.invalid">
+                <small *ngIf="name?.hasError('required')" class="text-danger">O campo 'Nome' é de preenchimento
+                    obrigatório!</small>
+            </ng-container>
+            <p>
+                <label for="email">E-mail: </label>
+                <input formControlName="email" type="email" name="email">
+            </p>
+            <ng-container *ngIf="(email?.invalid && email?.touched) || email?.dirty">
+                <small *ngIf="email?.errors?.['required']" class="text-danger">O campo 'E-mail' é de preenchimento
+                    obrigatório!</small>
+            </ng-container>
+            <ng-container *ngIf="email?.invalid && email?.touched">
+                <small *ngIf="email?.errors?.['pattern']" class="text-danger">Por favor insira um endereço de e-mail
+                    válido.</small>
+            </ng-container>
+            <p>
+                <label for="password">Senha: </label>
+                <input formControlName="password" type="password" name="password">
+            </p>
+            <ng-container *ngIf="(password?.invalid && password?.touched) || password?.dirty">
+                <small *ngIf="password?.errors?.['required']" class="text-danger">O campo 'Senha' é de preenchimento
+                    obrigatório!</small>
+            </ng-container>
+            <ng-container *ngIf="password?.invalid">
+                <small *ngIf="password?.errors?.['pattern']" class="text-danger">Por favor actualize a sua senha. Deve
+                    ter um mínimo de 8 caracteres, que contenha, pelo menos, uma letra maiúscula, uma minúscula, um
+                    algarismo e um símbolo.</small>
+            </ng-container>
+
+            <p>
+                <label for="password_confirm"> Confirme a senha: </label>
+                <input formControlName="password_confirm" type="password" name="password_confirm">
+            </p>
+            <ng-container
+                *ngIf="(password?.valid && password_confirm?.invalid && !password_confirm?.touched) || password_confirm?.dirty">
+                <small *ngIf="password_confirm?.errors?.['required']" class="text-danger">É obrigatório confirmar a
+                    senha atual ou alterada!</small>
+                <small *ngIf="!password_confirm?.errors?.['required'] && password_confirm?.errors?.['noMatch']"
+                    class="text-danger">As senhas devem
+                    coincidir!</small>
+            </ng-container>
+
+            <p>
+                <label for="address">Morada: </label>
+                <input formControlName="address" type="text" name="address">
+            </p>
+            <ng-container *ngIf="address?.touched && address?.invalid">
+                <small *ngIf="address?.errors?.['required']" class="text-danger">O campo 'Morada' é de preenchimento
+                    obrigatório!</small>
+                <small *ngIf="address?.errors?.['minlength']" class="text-danger">Por favor insira uma morada (mínimo:
+                    10 caracteres).</small>
+            </ng-container>
+            <p>
+                <label for="zip">Código Postal: </label>
+                <input formControlName="zip" type="text" name="zip">
+            </p>
+            <ng-container *ngIf="zip?.touched && zip?.invalid">
+                <small *ngIf="zip?.errors?.['required']" class="text-danger">O campo 'Código Postal' é de preenchimento
+                    obrigatório!</small>
+                <small *ngIf="zip?.errors?.['pattern']" class="text-danger">O código postal deve seguir o formato
+                    xxxx-xxx!"</small>
+            </ng-container>
+            <p>
+                <label for="country">País: </label>
+                <input formControlName="country" type="text" name="country">
+            </p>
+            <ng-container *ngIf="country?.touched && country?.invalid">
+                <small *ngIf="country?.errors?.['required']" class="text-danger">O campo 'País' é de preenchimento
+                    obrigatório!</small>
+            </ng-container>
+
+            <ng-container *ngIf="country?.invalid && country?.touched">
+                <small *ngIf="country?.errors?.['minlength']" class="text-danger">O país deve ser representado por, no
+                    mínimo, duas letras!</small>
+            </ng-container>
+            <div class="col text-center">
+                <p><button id="btnSaveChanges" class="btn btn-primary" [disabled]="form.invalid">Guardar
+                        alterações</button>
+                </p>
+                <button id="btnGoBack" class="btn btn-primary" (click)="goBack()">Voltar atrás</button>
+            </div>
+        </form>
+    </ng-container>
+</section>
+<app-saveuserchangesinfodialog *ngIf="isChanged"></app-saveuserchangesinfodialog>

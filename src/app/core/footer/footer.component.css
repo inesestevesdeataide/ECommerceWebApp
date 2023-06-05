@@ -1,0 +1,44 @@
+#footerContainer {
+    background-color: #e4e4e4;
+    text-align: center;
+    padding: 30px;
+    max-height: 170px;
+  }
+  
+  #footerContainer p {
+    font-size: small;
+    margin-bottom: 0;
+  }
+  
+  #footerIcons {
+    margin-bottom: 30px;
+  }
+  
+  #footerIcons a:not(:last-child){
+    margin-right: 30px;
+  }
+  
+  #footerIcons i {
+    color: black;
+    font-size: 1.1rem;
+  }
+
+  @media only screen and (max-width: 800px) {
+    #footerContainer {
+      max-height: 90%;
+    }
+
+    #footerIcons {
+      margin-bottom: 20px;
+    }
+  }
+
+  @media only screen and (max-width: 480px) {
+    #footerContainer {
+      max-height: 80%;
+    }
+
+    #footerIcons {
+      margin-bottom: 15px;
+    }
+  }

@@ -1,0 +1,36 @@
+<section *ngIf="productListTemp" class="container-fluid">
+    <section id="manProductsContent" class="row">
+        <aside class="col-3">
+            <app-filter [productList]="productList" (filterTriggered)="onFilterOn($event)"
+                (filterOff)="onFilterOff()"></app-filter>
+        </aside>
+        <section class="col-9">
+            <h1><strong>Homem</strong></h1>
+            <p id="count">Total de resultados: {{ resultCount }}</p>
+            <table>
+                <tbody>
+                    <tr>
+                        <!-- TODO: <app-productcard></app-productcard> ? -->
+                        <td *ngFor="let product of productListTemp; let i = index">
+                            <section class="card">
+                                <button id="btnMoveToWishlist" *ngIf="isLogged" (click)="toggleWishedItem(product)">
+                                    <i [ngClass]="isNowInWishlist(product) ? 'fa-solid filled-star' : 'fa-regular unfilled-star'"></i>
+                                </button>
+                                <a routerLink="/product/{{ product.id }}" target="_blank" class="images">
+                                    <img [src]="product.main_photo" [alt]="product.name">
+                                    <img [src]="product.sec_photo" [alt]="product.name">
+                                </a>
+                                <section>
+                                    <h5><strong>{{ product.brand }}</strong></h5>
+                                    <p>{{ product.name }}</p>
+                                    <h6>{{ product.price }}€</h6>
+                                </section>
+                            </section>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button id="btnViewMore" *ngIf="canViewMore" (click)="loadMore()">Ver mais</button>
+        </section>
+    </section>
+</section>

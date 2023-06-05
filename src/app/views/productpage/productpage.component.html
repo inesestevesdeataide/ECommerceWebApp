@@ -1,0 +1,13 @@
+<section id="productContent" *ngIf="product">
+    <ng-container>
+        <h2><strong>{{ product.brand }}</strong></h2>
+        <h3>{{ product.name }}</h3>
+        <section id="images">
+            <img [src]="product.main_photo" [alt]="product.name">
+            <img [src]="product.sec_photo" [alt]="product.name">
+        </section>
+        <h5>{{ product.product_type }} {{ product.color }}</h5>
+        <h5>{{ product.price }}€</h5>
+        <p>{{ product.description }}</p>
+    </ng-container>
+</section>

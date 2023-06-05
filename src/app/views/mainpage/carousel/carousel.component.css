@@ -1,0 +1,23 @@
+#carouselContent {
+  position: relative;
+}
+
+.ngb-carousel {
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  margin: 0;
+  text-align: center;
+  width: 100%;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 1px;
+}

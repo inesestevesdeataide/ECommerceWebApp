@@ -1,0 +1,88 @@
+<section id="productUpdateContent" *ngIf="product" class="container-fluid">
+    <h1><strong>Editar produto</strong></h1>
+    <ng-container>
+        <form [formGroup]="form" (ngSubmit)="saveChanges()">
+            <p>
+                <label for="name">Nome: </label>
+                <input formControlName="name" type="text" name="name">
+            </p>
+            <ng-container *ngIf="name?.touched && name?.invalid">
+                <small *ngIf="name?.hasError('required')" class="text-danger">O campo 'Nome' é de preenchimento
+                    obrigatório!</small>
+            </ng-container>
+            <p>
+                <label for="brand">Marca: </label>
+                <input formControlName="brand" type="text" name="text">
+            </p>
+            <ng-container *ngIf="brand?.touched && brand?.invalid">
+                <small *ngIf="brand?.hasError('required')" class="text-danger">O campo 'Marca' é de preenchimento
+                    obrigatório!</small>
+            </ng-container>
+            <p>
+                <label for="product_type">Tipo: </label>
+                <select formControlName="product_type" name="product_type">
+                    <option selected disabled value="">-- Selecionar um tipo de produto --</option>
+                    <option *ngFor="let type of productTypes" [value]="type">{{ type }}</option>
+                </select>
+            </p>
+            <ng-container *ngIf="product_type?.touched && product_type?.invalid">
+                <small *ngIf="product_type?.hasError('required')" class="text-danger">O campo 'Tipo' é de preenchimento
+                    obrigatório!</small>
+            </ng-container>
+            <p>
+                <label for="color"> Cor: </label>
+                <input formControlName="color" type="text" name="color">
+            </p>
+            <ng-container *ngIf="color?.touched && color?.invalid">
+                <small *ngIf="color?.hasError('required')" class="text-danger">O campo 'Cor' é de preenchimento
+                    obrigatório!</small>
+            </ng-container>
+            <p>
+                <label for="price">Preço: </label>
+                <input formControlName="price" type="number" name="price">
+            </p>
+            <ng-container *ngIf="price?.touched && price?.invalid">
+                <small *ngIf="price?.hasError('required')" class="text-danger">O campo 'Preço' é de preenchimento
+                    obrigatório!</small>
+            </ng-container>
+            <p>
+                <label for="description">Descrição: </label>
+                <input formControlName="description" type="text" name="description">
+            </p>
+            <ng-container *ngIf="description?.touched && description?.invalid">
+                <small *ngIf="description?.hasError('required')" class="text-danger">O campo 'Descrição' é de
+                    preenchimento
+                    obrigatório!</small>
+            </ng-container>
+            <p>
+                <label for="main_photo">Foto principal: </label>
+                <input formControlName="main_photo" type="text" name="main_photo">
+            </p>
+            <ng-container *ngIf="main_photo?.touched && main_photo?.invalid">
+                <small *ngIf="main_photo?.hasError('required')" class="text-danger">O campo 'Foto principal' é de
+                    preenchimento obrigatório!</small>
+            </ng-container>
+            <p>
+                <label for="sec_photo">Foto secundária: </label>
+                <input formControlName="sec_photo" type="text" name="sec_photo">
+            </p>
+            <ng-container *ngIf="sec_photo?.touched && sec_photo?.invalid">
+                <small *ngIf="sec_photo?.hasError('required')" class="text-danger">O campo 'Foto principal' é de
+                    preenchimento obrigatório!</small>
+            </ng-container>
+            <p id="featured">
+                <input formControlName="featured" type="checkbox" name="featured" [checked]="featured">
+                <label for="featured"> Destaque</label>
+            </p>
+            <ng-container id="featured" *ngIf="featured?.touched && featured?.invalid">
+            </ng-container>
+            <br>
+        <section class="col text-center">
+            <p><button id="btnSaveChanges" class="btn btn-primary" [disabled]="form.invalid">Guardar
+                    alterações</button>
+            </p>
+            <button id="btnGoBack" class="btn btn-primary" (click)="goBack()">Voltar atrás</button>
+        </section>
+        </form>
+    </ng-container>
+</section>

@@ -1,0 +1,90 @@
+#productCreateContent {
+    max-width: 85%;
+    margin-left: 0;
+}
+
+#productCreateContent p {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    vertical-align: middle;
+}
+
+#productCreateContent ng-container small {
+    margin-bottom: 15px;
+}
+
+#productCreateContent small, label {
+    vertical-align: middle;
+}
+
+#productCreateContent p:last-of-type {
+    margin-top: 70px;
+    margin-bottom: 30px;
+}
+
+#productCreateContent input, select, p:nth-of-type(9) {
+    float: right;
+    width: 85%;
+}
+
+#productUpdateContent input[type="checkbox"] {
+    width: 2%;
+    margin-right: 10px;
+}
+
+#productCreateContent input[type="checkbox"] {
+    float: left;
+    width: 2%;
+    margin-top: 7px;
+    margin-right: 10px;
+}
+
+.ng-touched.ng-invalid:not(form) {
+    border: 2px solid red; 
+}
+.ng-touched.ng-invalid:not(form) ~ small {
+    margin-bottom: 10px;
+    display: inline;
+} 
+
+@media only screen and (max-width: 800px) {
+    #productCreateContent p {
+        margin-top: 13px;
+        margin-bottom: 13px;
+    }
+    
+    #productCreateContent label, input, button, select {
+        font-size: 14px;
+    }
+
+    #productCreateContent small {
+        font-size: 12px;
+    }
+
+    #productCreateContent input, select, #featured {
+        width: 75%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    #productCreateContent p {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    #productCreateContent label, input, button {
+        font-size: 12px;
+    }
+
+    #productCreateContent label, input, button, select {
+        font-size: 10px;
+    }
+
+    #productCreateContent small {
+        font-size: 10px;
+    }
+
+    #productCreateContent input, select, #featured {
+        width: 65%;
+    }
+}

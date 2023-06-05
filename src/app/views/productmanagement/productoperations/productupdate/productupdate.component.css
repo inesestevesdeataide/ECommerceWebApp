@@ -1,0 +1,100 @@
+#productUpdateContent {
+    padding: 50px;
+}
+
+#productUpdateContent h1 {
+    margin-bottom: 30px;
+}
+
+#productUpdateContent p {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    vertical-align: middle;
+}
+
+#productUpdateContent input, select, #featured {
+    float: right;
+    width: 85%;
+}
+
+#productUpdateContent label {
+    vertical-align: middle;
+}
+
+#productUpdateContent input[type="checkbox"] {
+    float: left;
+    width: 2%;
+    margin-top: 7px;
+    margin-right: 10px;
+}
+  
+.text-center {
+    font-family: inherit;
+    margin-top: 35px;
+}
+
+#btnGoBack {
+    background-color: cornflowerblue;
+    margin-top: 15px;
+}
+
+.ng-touched.ng-invalid:not(form) {
+    border: 2px solid red; 
+}
+.ng-touched.ng-invalid:not(form) ~ small {
+    margin-bottom: 10px;
+    display: inline;
+}
+
+@media only screen and (max-width: 1150px) {
+    #productUpdateContent input, select, #featured {
+        width: 75%;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    #productUpdateContent p {
+        margin-top: 13px;
+        margin-bottom: 13px;
+    }
+    
+    #productUpdateContent label, input, select, p, button {
+        font-size: 12px;
+    }
+
+    #productUpdateContent input, select, #featured {
+        width: 70%;
+    }
+
+    #productUpdateContent input[type="checkbox"] {
+        margin-top: 3.5px;
+    }
+      
+    .text-center {
+        font-family: inherit;
+        margin-top: 35px;
+    }
+    
+    #btnGoBack {
+        background-color: cornflowerblue;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    #productUpdateContent p {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    #productUpdateContent label,input, p, button {
+        font-size: 12px;
+    }
+
+    #productUpdateContent small {
+        font-size: 10px;
+    }
+
+    #productUpdateContent input, select, #features {
+        width: 65%;
+    }
+}

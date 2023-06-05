@@ -1,0 +1,73 @@
+<header>
+    <nav>
+        <section class="navbar-center">
+            <section class="dropdown">
+                <button>Homem</button>
+                <section class="dropdown-content">
+                    <a href="#">Casacos</a>
+                    <a href="#">Camisas</a>
+                    <a href="#">Calças</a>
+                    <a href="#">Sweatshirt</a>
+                    <a href="#">Polos</a>
+                    <a href="#">Sapatos</a>
+                    <a routerLink="/men/all">Todos</a>
+                </section>
+            </section>
+            |<section class="dropdown">
+                <button>Mulher</button>
+                <section class="dropdown-content">
+                    <a href="#">Vestidos</a>
+                    <a href="#">Blusões</a>
+                    <a href="#">Coletes</a>
+                    <a href="#">Jeans</a>
+                    <a href="#">Saias</a>
+                    <a href="#">Calções</a>
+                    <a href="#">Lingerie</a>
+                    <a href="#">Sapatos</a>
+                    <a href="#">Malas</a>
+                    <a href="#">Todos</a>
+                </section>
+            </section>
+            <section class="dropdown"><a routerLink=""><img src="assets/images/logo.png" alt="H&M"></a></section>
+            <section class="dropdown">
+                <button>Criança</button>
+                <section class="dropdown-content">
+                    <a href="#">Menina | 6-14 Anos</a>
+                    <a href="#">Menino | 6-14 Anos</a>
+                    <a href="#">Bebé Menina | 3 Meses - 5 Anos</a>
+                    <a href="#">Bebé Menino | 3 Meses - 5 Anos</a>
+                    <a href="#">Mini | 0-12 Meses</a>
+                </section>
+            </section>
+            |<section class="dropdown">
+                <button>Acessórios</button>
+                <section class="dropdown-content">
+                    <a href="#">Malas</a>
+                    <a href="#">Pulseiras</a>
+                    <a href="#">Anéis</a>
+                </section>
+            </section>
+        </section>
+        <section class="navbar-right">
+            <section *ngIf="!isLogged">
+                <i routerLink="signup" id="register" class="fa-solid fa-user-plus" title="Registo"></i>
+                <i id="login" class="fa-solid fa-arrow-right-to-bracket" title="Login"
+                    (click)="logindialog.openDialogBox()"></i>
+            </section>
+
+            <app-logindialog #logindialog (userIsLogged)="userIsLoggedHandler($event)"
+                (welcomeMessageHelper)="welcomeMessageHandler($event)"
+                (userIsAdmin)="userIsAdminHandler($event)"></app-logindialog>
+
+            <section *ngIf="isLogged">
+                <small id="welcomeMessage">Bem-vindo(a), {{ userName }}</small>
+                <i *ngIf="isAdmin" routerLink="admin" class="fa-sharp fa-solid fa-gear"
+                    title="Área de Administração"></i>
+                <i id="wishlist" routerLink="wishlist" class="fa-regular fa-clipboard" title="Wishlist"></i>
+                <i routerLink="user" id="profile" class="fa-regular fa-user" title="Perfil"></i>
+                <i id="logout" class="fa-solid fa-arrow-right-from-bracket" title="Logout"
+                    (click)="logindialog.logout()"></i>
+            </section>
+        </section>
+    </nav>
+</header>

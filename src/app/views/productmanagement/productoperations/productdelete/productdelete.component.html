@@ -1,0 +1,12 @@
+<section id="deleteDialogBox" *ngIf="product">
+    <section id="deleteDialogBoxContent" class="col text-center">
+        <h4><strong>Eliminar produto</strong></h4>
+        <br>
+        <p>Confirma que pretende eliminar o produto <span><strong>"{{ product.name }}"</strong></span> da marca <span><strong>{{ product.brand | uppercase }}</strong></span>?</p>
+        <br>
+        <section>
+            <button type="button" class="btn btn-primary" (click)="confirmDelete()">Sim</button>
+            <button type="button" class="btn btn-danger" (click)="closeDialogBox()">Cancelar</button>
+        </section>
+    </section>
+</section>

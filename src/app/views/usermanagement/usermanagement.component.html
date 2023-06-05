@@ -1,0 +1,27 @@
+<section id="userManagementContent" class="container-fluid">
+    <h1 class="col text-center"><strong>Gestão de utilizadores</strong></h1>
+    <p *ngIf="usersList.length===0">Não existem utilizadores na base de dados!</p>
+    <table id="userTable" *ngIf="usersList.length>0" class="text-center">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>Ativo?</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of usersList; ; let i = index">
+                <td>{{ user.name }}</td>
+                <td>{{ user.email }}</td>
+                <td>
+                    <input type="checkbox" [(ngModel)]="user.isActive" (change)="activateUser(user)" [checked]="user.isActive" />
+                </td>
+            </tr>
+        </tbody>
+        <tfoot></tfoot>
+    </table>
+    <section id="buttons" class="text-center">
+        <p><button routerLink="/admin" class="btn btn-primary">Voltar à área de administração</button></p>
+        <p><button routerLink="" id="btnGoBackHome" class="btn btn-primary">Voltar à página principal</button></p>
+    </section>
+</section>

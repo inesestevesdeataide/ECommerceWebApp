@@ -1,0 +1,6 @@
+<section id="productmanagementContent">
+<h1><strong>Gestão de produtos</strong></h1>
+<app-productcreate (productAdded)="onProductAdded($event)"></app-productcreate>
+<app-productsearch (insertedValue)="search($event)"></app-productsearch>
+<app-productstable [productList] = "tempProductList" (triggeredId)="deleteProduct($event)"></app-productstable>
+</section>

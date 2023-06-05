@@ -1,0 +1,96 @@
+table {
+    max-width: 100%;
+    margin-right: 0;
+    /* width: 70%; */
+    border: solid 2.5px black;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: rgb(255, 106, 0);
+    color: white;
+    padding: 10px 15px;
+}
+
+td {
+    padding: 10px 20px 5px 20px;
+    text-align: left;
+}
+
+label { 
+    padding: 0 10px;
+}
+
+tfoot {
+    background-color: rgba(255, 106, 0, 0.37);
+    border: solid 2.5px black;
+    cursor: pointer;
+}
+
+tfoot:hover {
+    background-color: rgb(255, 106, 0);
+}
+
+button {
+    border-radius: 0;
+    border: none;
+}
+
+tfoot:hover button {
+    font-weight: bold;
+    color: white;
+}
+
+@media only screen and (max-width: 800px) {
+    table {
+        /* width: 90%; */
+        border: solid 2px rgb(128, 122, 122);
+    }
+    
+    th {
+        padding: 8px 13px;
+        font-size: 14px;
+    }
+    
+    td {
+        padding: 7px 8px 4px 10px;
+        font-size: 14px;
+    }
+    
+    label { 
+        padding: 0 8px;
+    }
+    
+    tfoot tr {
+        border: solid 2px black;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    tr {
+        grid-template-rows: repeat(1, auto);
+        grid-template-columns: repeat(1, 1fr);
+    }
+    th {
+        font-size: 12px;
+    }
+    
+    td {
+        font-size: 12px;
+    }
+
+    button {
+        font-size: 12px;
+    }
+
+    .images img {
+        max-width: 150px;
+        max-height: 200px;
+        padding-bottom: 15px;
+    }
+}
+    

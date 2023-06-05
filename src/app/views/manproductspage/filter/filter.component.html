@@ -1,0 +1,29 @@
+<ng-container *ngIf="types && colors">
+    <table>
+        <tbody>
+            <tr>
+                <th>Tipo</th>
+            </tr>
+            <tr *ngFor="let type of types">
+                <td>
+                    <input type="radio" name="type" [(ngModel)]="selectedType" [value]="type"
+                        (change)="onFilterTriggered()" #typeInput>
+                    <label for="type">{{ type }}</label>
+                </td>
+            </tr>
+            <tr>
+                <th>Cor</th>
+            </tr>
+            <tr *ngFor="let color of colors">
+                <td>
+                    <input type="radio" name="color" [(ngModel)]="selectedColor" [value]="color"
+                        (change)="onFilterTriggered()" #colorInput>
+                    <label for="color">{{ color }}</label>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr><button class="btn" (click)="clear(typeInput, colorInput)">Remover filtro</button></tr>
+        </tfoot>
+    </table>
+</ng-container>
